@@ -7,10 +7,9 @@
 # Each .png will be created with the following properties:
 # - Quality 100%
 # - No transparancy
-# - Scale 150%
+# - Scale 160%
 ###############################################################################################
-param ($format = "png")
-
+$format = "png"
 $diagramsFolder = "./diagrams"
 $outputFolder = "./$format"
 
@@ -34,7 +33,7 @@ foreach ($chapter in $chapters)
 
         Write-Host "$inputPath --> $outputPath"
 
-        & draw.io.exe -x -f $format  -q 100 -s 1.5 -o $outputPath $inputPath > $null
+        & draw.io.exe -x -f $format  -q 100 -s 1.6 -o $outputPath $inputPath > $null
     }
 }
 

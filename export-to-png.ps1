@@ -9,9 +9,10 @@
 # - No transparancy
 # - Scale 150%
 ###############################################################################################
+param ($format = "png")
 
 $diagramsFolder = "./diagrams"
-$outputFolder = "./png"
+$outputFolder = "./$format"
 
 if (Test-Path $outputFolder)
 {
@@ -27,13 +28,13 @@ foreach ($chapter in $chapters)
     $diagrams = Get-ChildItem $diagramsFolder/$chapter/*.drawio
     foreach ($diagram in $diagrams) {
         $inputFile = $diagram.name
-        $outputFile = $diagram.name -replace ".drawio", ".png"
+        $outputFile = $diagram.name -replace ".drawio", ".$format"
         $inputPath = "$diagramsFolder/$chapter/$inputFile"
         $outputPath = "$outputFolder/$chapter/$outputFile"
 
         Write-Host "$inputPath --> $outputPath"
 
-        & draw.io.exe -x -f png -q 100 -s 1.5 -o $outputPath $inputPath > $null
+        & draw.io.exe -x -f $format  -q 100 -s 1.5 -o $outputPath $inputPath > $null
     }
 }
 

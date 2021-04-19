@@ -33,7 +33,7 @@ foreach ($chapter in $chapters)
 
         Write-Host "$inputPath --> $outputPath"
 
-        & draw.io.exe -x -f $format  -q 100 -s 1.5 -o $outputPath $inputPath > $null
+        & draw.io.exe -x -f $format  -q 100 -s 1.0 -o $outputPath $inputPath > $null
     }
 }
 

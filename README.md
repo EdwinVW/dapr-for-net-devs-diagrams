@@ -1,6 +1,8 @@
-# Diagrams for the "Dapr for .NET Developers" Book.
+# Diagrams for the book "Dapr for .NET Developers"
 
-https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/
+This repository contains the diagrams used in the book: "Dapr for .NET Developers".
+
+The book covers Dapr concepts and how to use Dapr. It describes ow to use the Dapr API directly, as well as using the Dapr SDK for .NET. You can read it here: [Microsoft docs - Dapr for .NET Developers](https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/) or download the [PDF](https://aka.ms/dapr-ebook).
 
 ## Instructions
 
@@ -9,6 +11,8 @@ https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/
 - Create a separate `.drawio` file for each diagram in its corresponding `/diagrams/<chapter>` folder.
 - Name every `.drawio` file as you want to generated PNG to be named (use kebab-casing).
 - Run `/export-to-png.ps1` script to generate PNGs for all diagrams.
+
+### Export
 
 The export script assumes that you've installed the desktop version of draw.io in the default folder `C:\Program Files\draw.io`. Generating all PNGs can take some time. It starts a new instance of draw.io for every diagram (this is because of some restrictions in the command-line export functionality).
 

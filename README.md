@@ -1,5 +1,7 @@
 # Diagrams for the "Dapr for .NET Developers" Book.
 
+https://docs.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/
+
 ## Instructions
 
 - Import `/diagrams/shape-library.xml` into your scratchpad in DrawIO to get the basic shapes.

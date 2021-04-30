@@ -7,7 +7,15 @@
 # Each .png will be created with the following properties:
 # - Quality 100%
 # - No transparancy
-# - Scale 150%
+# - Scale 100%
+#
+#----------------------------------------------------------------------------------------------
+#
+# The script assumes that you've installed the desktop version of draw.io in the # default 
+# folder: C:\Program Files\draw.io. Generating all PNGs can take some time. It starts a new 
+# instance of draw.io for every diagram (this is because some restrictions in the command-line 
+# export functionality).
+#
 ###############################################################################################
 $format = "png"
 $diagramsFolder = "./diagrams"
@@ -31,9 +39,10 @@ foreach ($chapter in $chapters)
         $inputPath = "$diagramsFolder/$chapter/$inputFile"
         $outputPath = "$outputFolder/$chapter/$outputFile"
 
-        Write-Host "$inputPath --> $outputPath"
-
-        & draw.io.exe -x -f $format  -q 100 -s 1.0 -o $outputPath $inputPath > $null
+        Start-process -filepath "C:\Program Files\draw.io\draw.io.exe" `
+            -ArgumentList "-x -f $format -q 100 -s 1.0 -o `"$outputPath`" `"$inputPath`"" `
+            -WindowStyle Hidden `
+            -Wait
     }
 }
 

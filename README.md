@@ -9,3 +9,5 @@
 - Run `/export-to-png.ps1` script to generate PNGs for all diagrams.
 
 The export script assumes that you've installed the desktop version of draw.io in the default folder `C:\Program Files\draw.io`. Generating all PNGs can take some time. It starts a new instance of draw.io for every diagram (this is because some restrictions in the command-line export functionality).
+
+Be aware that when you run the export script, some diagrams that have not been changed will still yield a new version of the PNG. You can push these new versions. It's probably because of compression that the file has changed when doing a byte-level compare. But they look the same.

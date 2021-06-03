@@ -7,7 +7,7 @@
 # Each .png will be created with the following properties:
 # - Quality 100%
 # - No transparancy
-# - Scale 100%
+# - Scale 150%
 #
 #----------------------------------------------------------------------------------------------
 #
@@ -40,7 +40,7 @@ foreach ($chapter in $chapters)
         $outputPath = "$outputFolder/$chapter/$outputFile"
 
         Start-process -filepath "C:\Program Files\draw.io\draw.io.exe" `
-            -ArgumentList "-x -f $format -q 100 -s 1.0 -o `"$outputPath`" `"$inputPath`"" `
+            -ArgumentList "-x -f $format -q 100 -s 1.5 -o `"$outputPath`" `"$inputPath`"" `
             -WindowStyle Hidden `
             -Wait
     }
